@@ -1,9 +1,11 @@
-const express = require('express'); 
-const issueController = require('../controllers/issues'); 
-const router = express.Router(); 
+const express = require('express');
+const issueController = require('../controllers/issues');
 
-router.get('/', issueController.listIssues); 
-router.post('/', issueController.createIssue); 
-router.patch('/:id/status', issueController.updateIssueStatus); 
+const router = express.Router();
 
-module.exports = router; 
+// Each line: HTTP method + path -> controller function
+router.get('/', issueController.listIssues);
+router.post('/', issueController.createIssue);
+router.patch('/:id/status', issueController.updateIssueStatus);
+
+module.exports = router;
